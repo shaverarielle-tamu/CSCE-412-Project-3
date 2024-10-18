@@ -61,6 +61,10 @@ char Requests::get_job_type(){
     return job_type;
 }
 
+int Requests::get_time(){
+    return Time;
+}
+
 /* For testing 
 
 int main () {

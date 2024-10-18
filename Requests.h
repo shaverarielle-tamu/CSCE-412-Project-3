@@ -23,6 +23,7 @@ class Requests {
         string get_ip_in();
         string get_ip_out();
         char get_job_type();
+        int get_time();
 };
 
 #endif
