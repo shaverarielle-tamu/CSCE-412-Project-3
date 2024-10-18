@@ -4,7 +4,10 @@
 #include "Requests.h"
 
 using std::cout, std::endl;
-Web_servers::Web_servers() {}
+
+Web_servers::Web_servers(){
+    server_id = generateID();
+}
 
 void Web_servers::process_request(Requests& request, Load_balancer& lb){
     cout << "Server " << server_id << "received request from " << request.get_ip_in() << " to " << request.get_ip_out() << endl;
@@ -29,7 +32,7 @@ int Web_servers::generateID(){
     return rand() % 900000 + 100000;
 }
 
-void ask_for_request(Load_balancer& lb){
+void Web_servers::ask_for_request(Load_balancer& lb){
     cout << "Waiting for next request..." << endl;
     lb.send_request(*this);
 }
